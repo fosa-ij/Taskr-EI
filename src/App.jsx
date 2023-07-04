@@ -1,10 +1,11 @@
 import './App.css'
+import Header from './components/header'
 
 function App() {
 
   return (
     <>
-      <h1>Todo List</h1>
+      <Header />
     </>
   )
 }
