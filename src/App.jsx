@@ -1,14 +1,14 @@
 import './App.css'
-import Login from './Login'
-import Header from './components/header'
+import Input from './components/Input'
+import Todo from './components/Todo'
+
 
 function App() {
-
   return (
     <>
-    <Header />
-      <Login/>
-      
+      <h1>Todo List</h1>
+      <Input />
+      <Todo/>
     </>
   )
 }
