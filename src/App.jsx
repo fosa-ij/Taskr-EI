@@ -4,6 +4,9 @@ import Header from './components/header'
 
 function App() {
 
+  const handleClick = () => {
+    console.log('Button clicked!');
+  };
   return (
     <>
     <Header />
@@ -12,5 +15,6 @@ function App() {
     </>
   )
 }
+
 
 export default App
