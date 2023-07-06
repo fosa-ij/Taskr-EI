@@ -22,7 +22,7 @@ This is a ToDo List application using React.
 - git checkout branch-name ~ enables you to switch branches
 
 
-### Git commands when working in the same branch 
+### Git commands when working in the same/different branch(es)
 - git pull origin development ~ This allows you to sync/update your branch with the development branch
 - git push origin HEAD:branch-name ~ This allows you to push code to the remote branch you created
 - git pull origin branch-name ~ This allows you to sync/update your branch with the remote branch you're working on
