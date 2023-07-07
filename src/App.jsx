@@ -1,14 +1,18 @@
 import './App.css'
 import Input from './components/Input'
-import Todo from './components/Todo'
+import { useState, createContext } from 'react'
 
+export const CheckContext = createContext()
 
 function App() {
+  const [isChecked, setIsChecked] = useState(false)
+
   return (
     <>
-      <h1>Todo List</h1>
-      <Input />
-      <Todo/>
+      <CheckContext.Provider value={[isChecked, setIsChecked]}>
+        <h1>Todo List</h1>
+        <Input />
+      </CheckContext.Provider>
     </>
   )
 }
