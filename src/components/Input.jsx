@@ -6,7 +6,9 @@ import { CheckContext } from '../App'
 
 
 const Input = () => {
-    const[todoList, setTodoList] = useState([])
+    const storedTodos = JSON.parse(localStorage.getItem('todos'))
+
+    const[todoList, setTodoList] = useState(storedTodos || '[]')
     const [todoItem, setTodoItem] = useState('')
     const [tag, setTag] = useState('')
     const [isChecked, setIsChecked] = useContext(CheckContext);
@@ -25,7 +27,7 @@ const Input = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setTodoList(todoList => [...todoList, list])
+        setTodoList(todoList => [list, ...todoList])
     }
 
     useEffect(() => {
