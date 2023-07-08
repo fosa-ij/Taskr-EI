@@ -9,16 +9,21 @@ import generateUniqueRandom from '../assets/randomNumbers'
 const Input = () => {
     const [todoList, setTodoList] = useContext(TodoListArr);
     const [todoItem, setTodoItem] = useState("");
+    const [tag, setTag] = useState("");
 
     const handleInput = (e) =>{
         setTodoItem(e.target.value);
+    }
+
+    const handleTag = (e) =>{
+        setTag(e.target.value);
     }
 
     const list = {
         todoTask: todoItem, 
         date: new Date().toString().split(' ').slice(0, 4).join(' '), 
         time: new Date().toString().split(' ').slice(4, 5).join(' '),
-        todoTag: 'tag', 
+        todoTag: tag, 
         id: generateUniqueRandom(500)
     }
 
@@ -26,21 +31,22 @@ const Input = () => {
         e.preventDefault()
         setTodoList(todoList => [list, ...todoList])
         setTodoItem('')
+        setTag('')
     }
 
     useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todoList))
+        setTag('')
     }, [todoList]);
 
     return (
         <>
             <form action='' method='post' >
                 <input type="text" name="todo" value={todoItem} onChange={handleInput} />   
-                {/* <input type="text" name="tag" /> */}
                 <label htmlFor="tag">Urgent</label>
-                <input type='radio'id='tag' value={'urgent'} name='tag'/>
+                <input type='radio'id='tag' value={'urgent'} name='tag' onClick={handleTag} checked={tag === 'urgent'}/>
                 <label htmlFor="tag2">Important</label>
-                <input type='radio' id='tag2' value={'important'} name='tag'/>
+                <input type='radio' id='tag2' value={'important'} name='tag' onClick={handleTag} checked={tag === 'important'} />
                 <button onClick={handleSubmit}><FontAwesomeIcon icon={faPlus}/></button>
             </form>
             <Todo />
