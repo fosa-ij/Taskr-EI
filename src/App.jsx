@@ -10,10 +10,13 @@ function App() {
 
   return (
     <>
-      <TodoListArr.Provider value={[todoList, setTodoList]}>
-        <h1>Todo List</h1>
-        <Input />
-      </TodoListArr.Provider>
+     <section>
+      <div>
+        <TodoListArr.Provider value={[todoList, setTodoList]}>
+          <Input />
+        </TodoListArr.Provider>
+      </div>
+      </section>
     </>
   );
 }
