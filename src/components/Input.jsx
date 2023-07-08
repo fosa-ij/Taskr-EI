@@ -1,17 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import Todo from './Todo'
-import { CheckContext } from '../App'
+import generateUniqueRandom from '../assets/randomNumbers'
 
 
 const Input = () => {
     const storedTodos = JSON.parse(localStorage.getItem('todos'))
 
-    const[todoList, setTodoList] = useState(storedTodos || '[]')
+    const[todoList, setTodoList] = useState(storedTodos || [])
     const [todoItem, setTodoItem] = useState('')
-    const [tag, setTag] = useState('')
-    const [isChecked, setIsChecked] = useContext(CheckContext);
 
     const handleInput = (e) =>{
         setTodoItem(e.target.value);
@@ -21,8 +19,8 @@ const Input = () => {
         todoTask: todoItem, 
         date: new Date().toString().split(' ').slice(0, 4).join(' '), 
         time: new Date().toString().split(' ').slice(4, 5).join(' '),
-        todoTag:tag, 
-        completed: isChecked
+        todoTag: 'tag', 
+        id: generateUniqueRandom(500)
     }
 
     const handleSubmit = (e) => {
@@ -40,11 +38,11 @@ const Input = () => {
                 <input type="text" name="todo" value={todoItem} onChange={handleInput} />   
                 {/* <input type="text" name="tag" /> */}
                 <label htmlFor="tag">Urgent</label>
-                <input type='radio'id='tag' value={'urgent'} name='tag'/>
+                <input type='radio'id='tag' value={'urgent'} name='tag' />
                 <label htmlFor="tag2">Important</label>
                 <input type='radio' id='tag2' value={'important'} name='tag'/>
-            </form>
             <button onClick={handleSubmit}><FontAwesomeIcon icon={faPlus}/></button>
+            </form>
             <Todo todoList={todoList} />
         </>
     )
