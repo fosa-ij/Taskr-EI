@@ -137,3 +137,19 @@ div .todo-container {
     opacity: 1;
     color: #f62d2d;
 }
+.urgent:hover, #tag1, .important:hover, #tag2 {
+    cursor: pointer;
+}
+
+.btn-update {
+    width: 10%;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 8px;
+    background-color: #055ef2;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: pointer;
+}

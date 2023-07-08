@@ -30,7 +30,7 @@ Styling for <Input /> Headings and Time
 .main-container {
   background-color: #f1f2f6;
   max-width: 40%;
-  margin: 0 auto;
+  margin: 35px auto;
   padding: 10px 20px;
   text-align: center;
   border-radius: 10px;
@@ -88,6 +88,9 @@ input[type=text]:focus {
   margin-bottom: 30px;
   
 }
+.btn-atn .del-btn:hover, .btn-update:hover, .update-btn:hover {
+  cursor: pointer;
+}
 
 .urgent, .important {
   padding: 3px 20px 4px 20px; 
@@ -99,7 +102,7 @@ input[type=text]:focus {
 }
 
 /* Add Todo Button */
-.todo-add > button {
+.btn-add {
   width: 50%;
   padding: 13px 0px;
   border: none;

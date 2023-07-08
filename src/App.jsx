@@ -1,21 +1,24 @@
-import './index.css'
-
+import './App.css'
 import Input from './components/Input'
 import { useState, createContext } from 'react'
 
-export const CheckContext = createContext()
+export const TodoListArr = createContext()
 
 function App() {
-  const [isChecked, setIsChecked] = useState(false)
+  const storedTodos = JSON.parse(localStorage.getItem("todos"));
+  const [todoList, setTodoList] = useState(storedTodos || []);
+
   return (
-    <section>
+    <>
+     <section>
       <div>
-        <CheckContext.Provider value={[isChecked, setIsChecked]}>
+        <TodoListArr.Provider value={[todoList, setTodoList]}>
           <Input />
-        </CheckContext.Provider>
+        </TodoListArr.Provider>
       </div>
-    </section>
-  )
+      </section>
+    </>
+  );
 }
 
 export default App
