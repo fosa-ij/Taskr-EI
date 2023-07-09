@@ -1,0 +1,268 @@
+/* family=Montserrat :wght@300;400;600;700  */
+
+/*===========================================
+Resources://
+Date Format: https://stackoverflow.com/questions/34590369/formatting-a-date-string-in-react-native
+Add Google Fonts: https://stackoverflow.com/questions/40769551/how-to-use-google-fonts-in-react-js
+Gradient: https://cssgradient.io/gradient-backgrounds/
+Shadow: https://getcssscan.com/css-box-shadow-examples
+============================================*/
+
+:root {
+  font-family: 'Montserrat', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  /* background-color: #f1f2f6; */
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  color: #2f3542;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ================================
+Sign-up Page styles 
+================================= */
+.signup h1{
+  padding: 2rem;
+}
+.signup{
+    min-height: 50vh;
+    text-align: center;
+    justify-content: center;
+    background: rgb(74, 184, 221);
+    padding: 10px;
+    border-radius: 5rem;
+}
+.signup button{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    background: rgb(88, 88, 172); /*blue*/
+    color: rgb(238, 196, 196);
+    border: none;
+    width: 15%;
+}
+.signup button:hover{
+    background: rgb(57, 57, 109); /*blue*/
+    color: rgb(10, 10, 10);      /*Black*/
+    transition: 0.3s ease-in-out;
+    }
+
+    .input-field{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-radius: 8px;
+      transition: 0.3s ease-in-out;
+      max-width: 30%;
+      margin: 15px auto;
+      padding: 10px 40px;
+      text-align: center;
+      border-radius: 10px;
+      
+  } 
+  #password {
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #0560f284;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: 0.3s ease-in-out;
+  }
+  #password:hover{
+    outline: none;
+    background-color: #cee2ff;
+    border: 1px solid #055ef2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  .input-field:focus {
+    outline: none;
+    background-color: #cee2ff;
+    border: 1px solid #055ef2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+/* ====================================================
+Styling for <Input /> Headings and Time 
+=======================================================*/
+
+.main-container {
+  background-color: #f1f2f6;
+  max-width: 40%;
+  margin: 15px auto;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.main-container .container-head {
+  margin-bottom: 30px;
+}
+
+.main-container .container-head h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: -10px;
+}
+
+.main-container .container-head p {
+  font-weight: 600;
+  color: #a0a0a0;
+}
+
+/* ====================================================
+Styling for <Input />  
+=======================================================*/
+
+section .todo-add {
+  width: 100%;
+}
+
+input[type=text]  {
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #0560f284;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: 0.3s ease-in-out;
+    
+} 
+
+input[type=text]:focus {
+  outline: none;
+  background-color: #cee2ff;
+  border: 1px solid #055ef2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 30px;
+  
+}
+.btn-atn .del-btn:hover, .btn-update:hover, .update-btn:hover {
+  cursor: pointer;
+}
+
+.urgent, .important, .sectionTag-container span:is(:nth-child(2)) {
+  padding: 3px 20px 4px 20px; 
+  border-radius: 30px;
+  background-color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000; 
+}
+
+/* Add Todo Button */
+.btn-add {
+  width: 50%;
+  padding: 13px 0px;
+  border: none;
+  border-radius: 8px;
+  background-color: #055ef2;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
+}
+
+/* Divider */
+
+/* .divider {
+  margin-top: 30px;
+}
+
+.divider hr {
+  width: 50%;
+  opacity: 0.3;
+} */
+
+/* ================================
+Section Tag styles 
+================================= */
+.sectionTag-container {
+  display: flex;
+  justify-content: center;
+  margin: 2.7em auto 1em auto;
+}
+.sectionTag-container > div {
+  margin: auto 2.5em;
+}
+.sectionTag-container span:is(:nth-child(1)) {
+  margin: auto .5em;
+  cursor: pointer;
+}
+.sectionTag-container span:is(:nth-child(2)) {
+  padding: .2em .6em; 
+  border-radius: 40%;
+  background-color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000; 
+}
+.active span:is(:nth-child(1)) {
+  color: black;
+  font-weight: 700;
+}
+.active span:is(:nth-child(2)) {
+  background-color: black;
+  /* color: #d4d4d4; */
+  color: rgb(217, 149, 149);
+  font-weight: 400;
+}
+/* ================================
+Responsive styles 
+================================= */
+/* Tablet */
+/* @media only screen and (max-width: 1270) {
+  .main-container {
+    max-width: 80%;
+  }
+  .sectionTag-container > div {
+    margin: auto 1.5em;
+}
+} */
+@media only screen and (max-width: 1190px) {
+  .main-container {
+    max-width: 70%;
+  }
+  .sectionTag-container > div {
+    margin: auto 1.5em;
+}
+}
+@media only screen and (max-width: 605px) {
+  .main-container {
+    max-width: 80%;
+  }
+  .sectionTag-container > div {
+    margin: auto 1em;
+    font-size: smaller;
+}
+.signup button {
+  width: 50%
+}
+
+}
+@media only screen and (max-width: 430px) {
+  .main-container {
+    max-width: 80%;
+  }
+  .sectionTag-container > div {
+    margin: auto .5em;
+    font-size: smaller;
+}
+}
