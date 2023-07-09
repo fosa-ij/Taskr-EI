@@ -24,7 +24,7 @@ const Input = () => {
     const list = {
         todoTask: todoItem, 
         date: new Date().toString().split(' ').slice(0, 4).join(' '), 
-        time: new Date().toString().split(' ').slice(4, 5).join(' '),
+        time: format(new Date(), 'HH:mm'),
         todoTag: tag, 
         id: generateUniqueRandom(500)
     }
@@ -63,9 +63,6 @@ const Input = () => {
                     </div>
                     <button className='btn-add' onClick={handleSubmit}><FontAwesomeIcon icon={faPaperPlane}/> Add Todo</button>
                 </form>
-                <div className='divider'>
-                        <hr/>
-                </div>
                 <Todo />
             </section>
         </div>

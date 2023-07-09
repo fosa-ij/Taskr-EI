@@ -30,7 +30,7 @@ Styling for <Input /> Headings and Time
 .main-container {
   background-color: #f1f2f6;
   max-width: 40%;
-  margin: 35px auto;
+  margin: 15px auto;
   padding: 10px 20px;
   text-align: center;
   border-radius: 10px;
@@ -92,7 +92,7 @@ input[type=text]:focus {
   cursor: pointer;
 }
 
-.urgent, .important {
+.urgent, .important, .sectionTag-container span:is(:nth-child(2)) {
   padding: 3px 20px 4px 20px; 
   border-radius: 30px;
   background-color: #d4d4d4;
@@ -117,15 +117,47 @@ input[type=text]:focus {
 
 /* Divider */
 
-.divider {
+/* .divider {
   margin-top: 30px;
 }
 
 .divider hr {
   width: 50%;
   opacity: 0.3;
-}
+} */
 
+/* ================================
+Section Tag styles 
+================================= */
+.sectionTag-container {
+  display: flex;
+  justify-content: center;
+  margin: 2.7em auto 1em auto;
+}
+.sectionTag-container > div {
+  margin: auto 2.5em;
+}
+.sectionTag-container span:is(:nth-child(1)) {
+  margin: auto .5em;
+  cursor: pointer;
+}
+.sectionTag-container span:is(:nth-child(2)) {
+  padding: .4em .6em; 
+  border-radius: 40%;
+  background-color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000; 
+}
+.active span:is(:nth-child(1)) {
+  color: black;
+  font-weight: 700;
+}
+.active span:is(:nth-child(2)) {
+  background-color: black;
+  color: #d4d4d4;
+  font-weight: 400;
+}
 /* ================================
 Responsive styles 
 ================================= */
