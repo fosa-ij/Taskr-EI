@@ -142,7 +142,7 @@ Section Tag styles
   cursor: pointer;
 }
 .sectionTag-container span:is(:nth-child(2)) {
-  padding: .4em .6em; 
+  padding: .2em .6em; 
   border-radius: 40%;
   background-color: #d4d4d4;
   font-size: 12px;
@@ -155,22 +155,46 @@ Section Tag styles
 }
 .active span:is(:nth-child(2)) {
   background-color: black;
-  color: #d4d4d4;
+  /* color: #d4d4d4; */
+  color: rgb(217, 149, 149);
   font-weight: 400;
 }
 /* ================================
 Responsive styles 
 ================================= */
 /* Tablet */
-
-@media only screen and (max-width: 890px) {
+/* @media only screen and (max-width: 1270) {
+  .main-container {
+    max-width: 80%;
+  }
+  .sectionTag-container > div {
+    margin: auto 1.5em;
+}
+} */
+@media only screen and (max-width: 1190px) {
   .main-container {
     max-width: 70%;
   }
+  .sectionTag-container > div {
+    margin: auto 1.5em;
+}
+}
+@media only screen and (max-width: 605px) {
+  .main-container {
+    max-width: 80%;
+  }
+  .sectionTag-container > div {
+    margin: auto 1em;
+    font-size: smaller;
 }
 
+}
 @media only screen and (max-width: 430px) {
   .main-container {
     max-width: 80%;
   }
+  .sectionTag-container > div {
+    margin: auto .5em;
+    font-size: smaller;
+}
 }
