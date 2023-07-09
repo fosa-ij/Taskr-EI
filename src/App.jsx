@@ -1,24 +1,16 @@
+import SignUp from './component/signUp'
 import './App.css'
-import Input from './components/Input'
-import { useState, createContext } from 'react'
 
-export const TodoListArr = createContext()
+
 
 function App() {
-  const storedTodos = JSON.parse(localStorage.getItem("todos"));
-  const [todoList, setTodoList] = useState(storedTodos || []);
 
   return (
     <>
-     <section>
-      <div>
-        <TodoListArr.Provider value={[todoList, setTodoList]}>
-          <Input />
-        </TodoListArr.Provider>
-      </div>
-      </section>
+      <h1>Todo List</h1>
+      <SignUp />
     </>
-  );
+  )
 }
 
-export default App
+export default App;
