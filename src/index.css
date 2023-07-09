@@ -63,7 +63,7 @@ input[type=text]  {
     display: block;
     width: 100%;
     padding: 15px 10px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     box-sizing: border-box;
     border: 1px solid #0560f284;
     border-radius: 8px;
@@ -132,10 +132,10 @@ Section Tag styles
 .sectionTag-container {
   display: flex;
   justify-content: center;
-  margin: 2.7em auto 1em auto;
+  margin: 2.5em auto 1em auto;
 }
 .sectionTag-container > div {
-  margin: auto 2.5em;
+  margin: auto 2em;
 }
 .sectionTag-container span:is(:nth-child(1)) {
   margin: auto .5em;
@@ -181,7 +181,9 @@ Responsive styles
 }
 @media only screen and (max-width: 605px) {
   .main-container {
-    max-width: 80%;
+    max-width: 90%;
+      margin: 5px auto;
+      padding: 10px 20px;
   }
   .sectionTag-container > div {
     margin: auto 1em;

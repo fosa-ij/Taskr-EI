@@ -10,7 +10,7 @@ div .todo-container {
 
 .todo-container hr {
     opacity: 0.3;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
 }
 
 .display-flex {
@@ -23,10 +23,40 @@ div .todo-container {
 .todo-main {
     text-align: left;
 }
+.edit {
+    text-align: left;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+}
+.edit > input[type=text] {
+    display: block;
+    width: 89%;
+    padding: 15px 10px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    border: 1px solid #0560f284;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: 0.3s ease-in-out;
+}
+.edit .btn-update {
+    width: 9%;
+    height: 3rem;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 8px;
+    background-color: #055ef2;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.3em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: pointer;
+}
 
 .todo-main p {
     font-weight: 600;
-    margin-bottom: 3px;
+    margin: 4px;
 }
 
 .todo-main > .tag {
@@ -102,9 +132,9 @@ div .todo-container {
 
   /* Date */
 
-.foot {
-    padding-bottom: 10px;
-}
+/* .foot {
+    padding-bottom: 5px;
+} */
 
 .date {
     display: flex;
@@ -152,4 +182,15 @@ div .todo-container {
     font-size: 12px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     cursor: pointer;
+}
+
+
+@media only screen and (max-width: 675px) {
+    .edit .btn-update {
+        width: 12%;
+    }
+    .edit > input[type=text] {
+        display: block;
+        width: 86%;
+  }
 }
