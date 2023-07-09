@@ -3,6 +3,8 @@ import { faAdd, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons
 import '../Todo.css'
 import { TodoListArr } from '../App'
 import { useState, useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Todo = () => {
     const storedCheckedTodos = JSON.parse(localStorage.getItem('checkedTodos'));
@@ -72,86 +74,126 @@ const Todo = () => {
     return (
       <>
         {todoList.length === 0 ? (
-          <h3>No todos yet, Add a todo</h3>
+          <>
+            <h3>No todos yet, Enjoy the peace</h3>
+            <h3>
+              Kindly{" "}
+              <Link className="login" to="/login">
+                Login
+              </Link> to add a todo
+            </h3>
+          </>
         ) : (
-            <>
-                <div className='sectionTag-container'>
-                    <div className={page == 'All' && 'active' || ''}>
-                        <span onClick={handlePageChange}>All</span>
-                        <span>{todoList.length}</span>
-                    </div>
-                    <div className={page == 'Open' && 'active' || ''}>
-                        <span onClick={handlePageChange}>Open</span>
-                        <span>{openTodos.length}</span>
-                    </div>
-                    <div className={page == 'Closed' && 'active' || ''}>
-                        <span onClick={handlePageChange}>Closed</span>
-                        <span>{completedTodos.length}</span>
-                    </div>
-                </div>
-                {/*Todo List Render Here...*/}
-                {todos.map((todo, index) => {
-                const isChecked = isAllChecked.includes(todo.id.toString())
-    
-                return (
+          <>
+            <div className="sectionTag-container">
+              <div className={(page == "All" && "active") || ""}>
+                <span onClick={handlePageChange}>All</span>
+                <span>{todoList.length}</span>
+              </div>
+              <div className={(page == "Open" && "active") || ""}>
+                <span onClick={handlePageChange}>Open</span>
+                <span>{openTodos.length}</span>
+              </div>
+              <div className={(page == "Closed" && "active") || ""}>
+                <span onClick={handlePageChange}>Closed</span>
+                <span>{completedTodos.length}</span>
+              </div>
+            </div>
+            {/*Todo List Render Here...*/}
+            {todos.map((todo, index) => {
+              const isChecked = isAllChecked.includes(todo.id.toString());
+
+              return (
                 <div className="todo-container" key={index}>
-                    {todoPage === 'edit' && todo.id === todoEdit.id ? (
+                  {todoPage === "edit" && todo.id === todoEdit.id ? (
                     <>
-                    <div>
-                        <div className='todo-main'>
-                        <input type="text" name="todo" value={todoEdit.todoTask} onChange={handleEdit} />
-                        <button className='btn-update' onClick={updateTodoHandler}><FontAwesomeIcon icon={faAdd} /></button>
+                      <div>
+                        <div className="todo-main">
+                          <input
+                            type="text"
+                            name="todo"
+                            value={todoEdit.todoTask}
+                            onChange={handleEdit}
+                          />
+                          <button
+                            className="btn-update"
+                            onClick={updateTodoHandler}
+                          >
+                            <FontAwesomeIcon icon={faAdd} />
+                          </button>
                         </div>
                         {/* <div > */}
-                        <span className='tag'>{todo.todoTag || 'todo'}</span>
+                        <span className="tag">{todo.todoTag || "todo"}</span>
                         {/* </div> */}
-                    </div>
-                    <hr />
-                    <div className='display-flex'>
-                        <div  className='date'>
-                        <span >{todo.date}</span>
-                        <span>{todo.time}</span>
+                      </div>
+                      <hr />
+                      <div className="display-flex">
+                        <div className="date">
+                          <span>{todo.date}</span>
+                          <span>{todo.time}</span>
                         </div>
-                        <div  className='btn-atn'>
-                        <button onClick={() => deleteTodo(todo.id)} className='del-btn'><FontAwesomeIcon icon={faTrash} /></button>
+                        <div className="btn-atn">
+                          <button
+                            onClick={() => deleteTodo(todo.id)}
+                            className="del-btn"
+                          >
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
                         </div>
-                    </div>
+                      </div>
                     </>
-                    ) : (
+                  ) : (
                     <>
-                        <div className="display-flex">
-                        <div  className='todo-main'>
-                            {isChecked ? (
+                      <div className="display-flex">
+                        <div className="todo-main">
+                          {isChecked ? (
                             <p>
-                                <del>{todo.todoTask}</del>
+                              <del>{todo.todoTask}</del>
                             </p>
-                            ) : (
+                          ) : (
                             <p>{todo.todoTask}</p>
-                            )}
-                            <span className='tag'>{todo.todoTag || 'todo'}</span>
+                          )}
+                          <span className="tag">{todo.todoTag || "todo"}</span>
                         </div>
-                        <div  className='check'>
-                            <input type="checkbox" value={todo.id} checked={isChecked} onChange={handleChecked} />
+                        <div className="check">
+                          <input
+                            type="checkbox"
+                            value={todo.id}
+                            checked={isChecked}
+                            onChange={handleChecked}
+                          />
                         </div>
+                      </div>
+                      <hr />
+                      <div className="display-flex foot">
+                        <div className="date">
+                          <span>{todo.date}</span>
+                          <span>{todo.time}</span>
                         </div>
-                        <hr />
-                        <div className="display-flex foot">
-                        <div  className='date'>
-                            <span>{todo.date}</span>
-                            <span>{todo.time}</span>
+                        <div className="btn-atn">
+                          {!isChecked && (
+                            <button
+                              className="update-btn"
+                              onClick={() => editTodoHandler(todo.id)}
+                            >
+                              <FontAwesomeIcon icon={faPenToSquare} />
+                            </button>
+                          )}
+                          <button
+                            onClick={() => deleteTodo(todo.id)}
+                            className="del-btn"
+                          >
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
                         </div>
-                        <div  className='btn-atn'>
-                        {!isChecked && (<button className='update-btn' onClick={() => editTodoHandler(todo.id)}><FontAwesomeIcon icon={faPenToSquare} /></button> )}
-                            <button onClick={() => deleteTodo(todo.id)} className='del-btn'><FontAwesomeIcon icon={faTrash} /></button>
-                        </div>
-                        </div>
+                      </div>
                     </>
-                    )}
+                  )}
                 </div>
-                )})}
-            </>
-        )
-        }
+              );
+            })}
+          </>
+        )}
       </>
     );
   };

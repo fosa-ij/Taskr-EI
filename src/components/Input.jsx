@@ -3,7 +3,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect, useContext } from 'react'
 import Todo from './Todo'
 import { TodoListArr } from '../App'
-import "../index.css"
+
 import { format } from 'date-fns'
 import generateUniqueRandom from '../assets/randomNumbers'
 
@@ -47,7 +47,7 @@ const Input = () => {
     return (
         <div className='main-container'>
             <div className='container-head'>
-            <h1>User&apos;s List</h1>
+            <h1>My Todo List</h1>
             <p>{currentDate}</p>
             </div>
             <section className='todo-add'>
