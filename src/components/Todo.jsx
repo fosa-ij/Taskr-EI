@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAdd, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faAdd, faArrowAltCircleUp, faPenToSquare, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
 import '../Todo.css'
+import '../index.css'
 import { TodoListArr } from '../App'
 import { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
@@ -46,7 +47,7 @@ const Todo = () => {
       setTodoPage('normal');
       setTodoEdit({});
     };
-  
+    
     const editTodoHandler = (id) => {
       setTodoPage(todoPage === 'normal' ? 'edit' : 'normal');
       const todoForEdit = todoList.find((todo) => todo.id === id);
@@ -70,7 +71,7 @@ const Todo = () => {
     useEffect(() => {
       localStorage.setItem('checkedTodos', JSON.stringify(isAllChecked));
     }, [isAllChecked]);
-  
+    
     return (
       <>
         {todoList.length === 0 ? (
@@ -107,20 +108,10 @@ const Todo = () => {
                 <div className="todo-container" key={index}>
                   {todoPage === "edit" && todo.id === todoEdit.id ? (
                     <>
-                      <div>
-                        <div className="todo-main">
-                          <input
-                            type="text"
-                            name="todo"
-                            value={todoEdit.todoTask}
-                            onChange={handleEdit}
-                          />
-                          <button
-                            className="btn-update"
-                            onClick={updateTodoHandler}
-                          >
-                            <FontAwesomeIcon icon={faAdd} />
-                          </button>
+                    <div>
+                        <div className='todo-main edit'>
+                        <input className='edit-input' type="text" name="todo" value={todoEdit.todoTask} onChange={handleEdit} />
+                        <button className='btn-update' onClick={updateTodoHandler}><FontAwesomeIcon icon={faArrowAltCircleUp} /></button>
                         </div>
                         {/* <div > */}
                         <span className="tag">{todo.todoTag || "todo"}</span>

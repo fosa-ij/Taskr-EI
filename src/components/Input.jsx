@@ -3,7 +3,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect, useContext } from 'react'
 import Todo from './Todo'
 import { TodoListArr } from '../App'
-
+import '../index.css'
 import { format } from 'date-fns'
 import generateUniqueRandom from '../assets/randomNumbers'
 
