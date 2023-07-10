@@ -182,7 +182,18 @@ input[type=text]:focus {
   cursor: pointer;
 }
 
-.urgent, .important, .sectionTag-container span:is(:nth-child(2)) {
+.urgent, .important {
+  display: flex;
+  align-items: self-end;
+  padding: 3px 20px 4px 20px;
+  border-radius: 30px;
+  background-color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000; 
+}
+
+.sectionTag-container span:is(:nth-child(2)) {
   padding: 3px 20px 4px 20px; 
   border-radius: 30px;
   background-color: #d4d4d4;
@@ -272,8 +283,9 @@ Responsive styles
 }
 @media only screen and (max-width: 675px) {
   .main-container {
-    max-width: 90%;
+    max-width: 100%;
     margin: .5rem auto;
+    padding: 10px 10px;
   }
   .sectionTag-container > div {
     margin: auto 1em;
