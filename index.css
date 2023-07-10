@@ -26,29 +26,30 @@ Shadow: https://getcssscan.com/css-box-shadow-examples
 /* ================================
 Sign-up Page styles 
 ================================= */
-.signup h1{
+ .signup h1{
   padding: 2rem;
+
 }
-.signup{
-    min-height: 50vh;
+ #signup{
+    /* min-height: 50vh; */
     text-align: center;
-    justify-content: center;
-    background: rgb(74, 184, 221);
+    background: #f1f2f6;;
     padding: 10px;
-    border-radius: 5rem;
-}
-.signup button{
-    margin: 1rem;
+    border-radius: 2rem;
+    margin-top: 5rem;
+} 
+#signup button{
+    /* margin: 1rem; */
     padding: 1rem;
     border-radius: 2rem;
-    background: rgb(88, 88, 172); /*blue*/
+    background: rgb(88, 88, 172); 
     color: rgb(238, 196, 196);
     border: none;
-    width: 15%;
+    width: 40%;
 }
-.signup button:hover{
-    background: rgb(57, 57, 109); /*blue*/
-    color: rgb(10, 10, 10);      /*Black*/
+#signup button:hover{
+    background: rgb(57, 57, 109); 
+    color: rgb(10, 10, 10);      
     transition: 0.3s ease-in-out;
     }
 
@@ -65,18 +66,36 @@ Sign-up Page styles
       border-radius: 10px;
       
   } 
-  #password {
+  #password{
     display: block;
     width: 100%;
-    padding: 15px 10px;
-    margin-bottom: 15px;
+    padding: 1em 0.8em;
+    margin-bottom: 0.5em;
     box-sizing: border-box;
     border: 1px solid #0560f284;
-    border-radius: 8px;
+    border-radius: 1em;
     background-color: #ffffff;
     transition: 0.3s ease-in-out;
   }
   #password:hover{
+    outline: none;
+    background-color: #cee2ff;
+    border: 1px solid #055ef2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  #cpassword{
+    display: block;
+    width: 100%;
+    padding: 1em 0.8em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    box-sizing: border-box;
+    border: 1px solid #0560f284;
+    border-radius: 1em;
+    background-color: #ffffff;
+    transition: 0.3s ease-in-out;
+  }
+  #cpassword:hover{
     outline: none;
     background-color: #cee2ff;
     border: 1px solid #055ef2;
@@ -87,6 +106,12 @@ Sign-up Page styles
     background-color: #cee2ff;
     border: 1px solid #055ef2;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  } 
+   .login{
+    text-decoration: none;
+  }
+  .login:hover{
+    transition: 0.3s ease-in-out;
   }
 /* ====================================================
 Styling for <Input /> Headings and Time 
@@ -95,7 +120,7 @@ Styling for <Input /> Headings and Time
 .main-container {
   background-color: #f1f2f6;
   max-width: 40%;
-  margin: 15px auto;
+  margin: 2rem auto;
   padding: 10px 20px;
   text-align: center;
   border-radius: 10px;
@@ -128,7 +153,7 @@ input[type=text]  {
     display: block;
     width: 100%;
     padding: 15px 10px;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
     box-sizing: border-box;
     border: 1px solid #0560f284;
     border-radius: 8px;
@@ -197,10 +222,10 @@ Section Tag styles
 .sectionTag-container {
   display: flex;
   justify-content: center;
-  margin: 2.7em auto 1em auto;
+  margin: 2.5em auto 1em auto;
 }
 .sectionTag-container > div {
-  margin: auto 2.5em;
+  margin: auto 1em;
 }
 .sectionTag-container span:is(:nth-child(1)) {
   margin: auto .5em;
@@ -222,7 +247,7 @@ Section Tag styles
   background-color: black;
   /* color: #d4d4d4; */
   color: rgb(217, 149, 149);
-  font-weight: 400;
+  font-weight: 800;
 }
 /* ================================
 Responsive styles 
@@ -239,14 +264,16 @@ Responsive styles
 @media only screen and (max-width: 1190px) {
   .main-container {
     max-width: 70%;
+    margin: 2rem auto;
   }
   .sectionTag-container > div {
-    margin: auto 1.5em;
+    margin: auto 1em;
 }
 }
-@media only screen and (max-width: 605px) {
+@media only screen and (max-width: 675px) {
   .main-container {
-    max-width: 80%;
+    max-width: 90%;
+    margin: .5rem auto;
   }
   .sectionTag-container > div {
     margin: auto 1em;
@@ -258,9 +285,6 @@ Responsive styles
 
 }
 @media only screen and (max-width: 430px) {
-  .main-container {
-    max-width: 80%;
-  }
   .sectionTag-container > div {
     margin: auto .5em;
     font-size: smaller;
