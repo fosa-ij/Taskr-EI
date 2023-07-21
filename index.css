@@ -40,12 +40,13 @@ Sign-up Page styles
 } 
 #signup button{
     /* margin: 1rem; */
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 2rem;
     background: rgb(88, 88, 172); 
     color: rgb(238, 196, 196);
     border: none;
-    width: 40%;
+    width: 35%;
+    margin-bottom: 0.8rem;
 }
 #signup button:hover{
     background: rgb(57, 57, 109); 

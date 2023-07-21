@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { auth} from "../config/todoDatabase";
+import GoogleAuthButton from "../config/google";
 
 const SignUp = () => {
     const [username, setUsername] = useState ('')
@@ -7,10 +10,29 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [cPassword, setCPassword] = useState('')
     const navigate = useNavigate()
+    
+    
+
 
 const handleSubmit = (event)=> {
     event.preventDefault();
-    navigate('/login')
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/login");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage)
+        // ..
+      });
+      setEmail('')
+      setPassword('')
+      setCPassword('')
+    
     
 };
 
@@ -22,20 +44,9 @@ const handleSubmit = (event)=> {
       <form onSubmit={handleSubmit}>
         <div className="input-field">
           <input
-            className="username"
-            type="text"
-            id="username"
-            name="username-input"
-            value={username}
-            placeholder="Username"
-            onChange={(event) => setUsername(event.target.value)}
-            required
-          />
-
-          <input
             type="text"
             name="email-input"
-            placeholder="example@gmail.com"
+            placeholder="email"
             value={email}
             id="email"
             onChange={(event) => setEmail(event.target.value)}
@@ -61,9 +72,16 @@ const handleSubmit = (event)=> {
         </div>
         <button type="submit">Sign Up</button>
       </form>
+
       <p>
-        Already signed up? <Link className="login" to="/login">Login</Link>{" "}
+        Already signed up?{" "}
+        <Link className="login" to="/login">
+          Login
+        </Link>{" "}
       </p>
+      <hr></hr>
+      <p>Or</p>
+      <GoogleAuthButton />
     </div>
   );
 }
