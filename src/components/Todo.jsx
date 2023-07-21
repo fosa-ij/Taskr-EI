@@ -4,7 +4,6 @@ import '../Todo.css'
 import '../index.css'
 import { TodoListArr } from '../App'
 import { useState, useContext, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 
 
 const Todo = () => {
@@ -77,12 +76,6 @@ const Todo = () => {
         {todoList.length === 0 ? (
           <>
             <h3>No todos yet, Enjoy the peace</h3>
-            <h3>
-              Kindly{" "}
-              <Link className="login" to="/login">
-                Login
-              </Link> to add a todo
-            </h3>
           </>
         ) : (
           <>
