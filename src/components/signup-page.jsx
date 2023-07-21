@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 import { auth} from "../config/todoDatabase";
 import GoogleAuthButton from "../config/google";
+import '../index.css'
 
 const SignUp = () => {
     const [username, setUsername] = useState ('')
@@ -10,8 +11,6 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [cPassword, setCPassword] = useState('')
     const navigate = useNavigate()
-    
-    
 
 
 const handleSubmit = (event)=> {
@@ -42,7 +41,7 @@ const handleSubmit = (event)=> {
     <div className="main-container" id="signup">
       <h1>Sign Up </h1>
       <form onSubmit={handleSubmit}>
-        <div className="input-field">
+        <div className="input-field" style={{width: '80%'}}>
           <input
             type="text"
             name="email-input"

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/todoDatabase";
 import GoogleAuthButton from "../config/google";
+import '../index.css'
 
 
 const Login = () => {
