@@ -121,7 +121,7 @@ Styling for <Input /> Headings and Time
 .main-container {
   background-color: #f1f2f6;
   max-width: 40%;
-  margin: 3rem auto;
+  margin: 2rem auto;
   padding: 10px 20px;
   text-align: center;
   border-radius: 10px;
@@ -154,7 +154,7 @@ input[type=text]  {
     display: block;
     width: 100%;
     padding: 15px 10px;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
     box-sizing: border-box;
     border: 1px solid #0560f284;
     border-radius: 8px;
@@ -183,7 +183,18 @@ input[type=text]:focus {
   cursor: pointer;
 }
 
-.urgent, .important, .sectionTag-container span:is(:nth-child(2)) {
+.urgent, .important {
+  display: flex;
+  align-items: self-end;
+  padding: 3px 20px 4px 20px;
+  border-radius: 30px;
+  background-color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000; 
+}
+
+.sectionTag-container span:is(:nth-child(2)) {
   padding: 3px 20px 4px 20px; 
   border-radius: 30px;
   background-color: #d4d4d4;
@@ -223,10 +234,10 @@ Section Tag styles
 .sectionTag-container {
   display: flex;
   justify-content: center;
-  margin: 2.7em auto 1em auto;
+  margin: 2.5em auto 1em auto;
 }
 .sectionTag-container > div {
-  margin: auto 2.5em;
+  margin: auto 1em;
 }
 .sectionTag-container span:is(:nth-child(1)) {
   margin: auto .5em;
@@ -248,7 +259,7 @@ Section Tag styles
   background-color: black;
   /* color: #d4d4d4; */
   color: rgb(217, 149, 149);
-  font-weight: 400;
+  font-weight: 800;
 }
 /* ================================
 Responsive styles 
@@ -265,14 +276,17 @@ Responsive styles
 @media only screen and (max-width: 1190px) {
   .main-container {
     max-width: 70%;
+    margin: 2rem auto;
   }
   .sectionTag-container > div {
-    margin: auto 1.5em;
+    margin: auto 1em;
 }
 }
-@media only screen and (max-width: 605px) {
+@media only screen and (max-width: 675px) {
   .main-container {
-    max-width: 80%;
+    max-width: 100%;
+    margin: .5rem auto;
+    padding: 10px 10px;
   }
   .sectionTag-container > div {
     margin: auto 1em;
@@ -284,9 +298,6 @@ Responsive styles
 
 }
 @media only screen and (max-width: 430px) {
-  .main-container {
-    max-width: 80%;
-  }
   .sectionTag-container > div {
     margin: auto .5em;
     font-size: smaller;
