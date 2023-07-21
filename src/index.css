@@ -26,6 +26,18 @@ Shadow: https://getcssscan.com/css-box-shadow-examples
 /* ====================================================
 Styling for signup/login 
 =======================================================*/
+.btn-signout {
+  width: 15%;
+  margin-bottom: 15px;
+  padding: 5px 0px;
+  background-color: rgb(192, 2, 2);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: small;
+}
+
 .signup h1{
   padding: 2rem;
 
@@ -53,18 +65,16 @@ Styling for signup/login
     transition: 0.3s ease-in-out;
     }
 
-    .input-field{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border-radius: 8px;
-      transition: 0.3s ease-in-out;
-      max-width: 30%;
-      margin: 15px auto;
-      padding: 10px 40px;
-      text-align: center;
-      border-radius: 10px;
-      
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    margin: 15px auto;
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 10px; 
   } 
   #password{
     display: block;
@@ -151,13 +161,12 @@ input[type=text]  {
     display: block;
     width: 100%;
     padding: 5px 10px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     border: 1px solid #0560f284;
     border-radius: 8px;
     background-color: #ffffff;
-    transition: 0.3s ease-in-out;
-    
+    transition: 0.3s ease-in-out; 
 } 
 
 input[type=text]:focus {
@@ -271,6 +280,13 @@ Responsive styles
   .signup button {
     width: 50%
   }
+  .btn-signout {
+    width: 25%;
+    margin-bottom: 20px;
+  }
+  .input-field {
+    width: 80%;
+  } 
 }
 @media only screen and (max-width: 430px) {
   .sectionTag-container > div {
